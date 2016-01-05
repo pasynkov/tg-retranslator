@@ -1,0 +1,7 @@
+[{
+    "name": "tg_radio",
+    "script": "./node_modules/vakoo/index.coffee",
+    "args": ["run", "-s", "retranslator"],
+    "error_file": "./logs/err.log",
+    "out_file": "./logs/out.log"
+}]
