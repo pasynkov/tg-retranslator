@@ -21,7 +21,7 @@
     "async": "^1.5.0",
     "node-telegram-bot-api": "^0.17.0",
     "node-twitter-api": "^1.6.3",
-    "tg_bot": "0.0.1",
+    "tg_bot": "0.0.x",
     "underscore": "^1.8.3",
     "vakoo": "0.0.25"
   }
