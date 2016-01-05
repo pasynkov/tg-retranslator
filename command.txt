@@ -1,0 +1,9 @@
+start - Start radio (alias `mute`)
+stop - Stop radio (alias `mute`)
+link - Link radio with Twitter account
+unlink - Remove Twitter account data
+mute - Mute the radio, bot stopped twitting
+settings - Open settings menu
+status - Get current settings status
+locale - Choose bot's language
+help - Help menu
