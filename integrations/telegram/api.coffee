@@ -1,6 +1,6 @@
 
 TelegramBot = require "node-telegram-bot-api"
-TgBot = require "tg_bot"
+#TgBot = require "tg_bot"
 _ = require "underscore"
 async = require "async"
 
