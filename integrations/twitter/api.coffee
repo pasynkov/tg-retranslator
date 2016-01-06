@@ -78,13 +78,21 @@ class TwitterApi
 
       if err
 
-        console.log err, data
-
         return callback err
 
       @logger.info "Media twitting complete successfully"
 
       callback()
+
+  getMe: (callback)=>
+
+    @client.account "settings", {}, @accessToken, @accessTokenSecret, (err, data, res)=>
+
+      if err
+        return callback err
+
+      callback null, data
+
 
 
 

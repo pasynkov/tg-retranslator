@@ -20,6 +20,7 @@ COMMAND_LIST = [
   SETTINGS
   LOCALE
   HELP
+  STATUS
 ]
 
 async = require "async"
@@ -321,7 +322,21 @@ class Command extends Event
 
   statusCommand: (callback)=>
 
-    callback()
+
+    async.waterfall(
+      [
+        @chat.getStatusArguments
+        (args, taskCallback)=>
+
+
+
+          text = @getLocaleMessage "STATUS", _.map(args, (a)=> if a in ["TRUE", "FALSE"] then @getLocaleMessage(a) else a)
+
+          @sendMessage text, taskCallback
+
+      ]
+      callback
+    )
 
   helpCommand: (callback)=>
 

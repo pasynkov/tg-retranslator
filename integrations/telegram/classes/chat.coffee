@@ -234,10 +234,12 @@ class Chat
       "#{@settings.privacy}".split("")
     ).map((i)-> +i).last().value() in [0,2]
 
+  tagRequired: =>
+    @settings.privacy >= 10
 
   messageHasTagIfRequired: =>
 
-    if @settings.privacy < 10
+    unless @tagRequired()
       return true
 
     return @currentMessage.hasTag @settings.tag
@@ -340,6 +342,32 @@ class Chat
       ]
       callback
     )
+
+  getStatusArguments: (callback)=>
+
+
+    params = {
+      mute: @isMute().toString().toUpperCase()
+      canTwitText: @canTwitText().toString().toUpperCase()
+      canTwitPhoto: @canTwitPhoto().toString().toUpperCase()
+      tagRequired: @tagRequired().toString().toUpperCase()
+      tag: @settings.tag or "FALSE"
+      twitter_link: "FALSE"
+    }
+
+    if @isLinked()
+      @twitter.getMe (err, twitterData)=>
+        if err
+          return callback err
+
+        params.twitter_link = "[#{twitterData.screen_name}](https://twitter.com/#{twitterData.screen_name})"
+
+        callback null, _.values(params)
+
+    else
+
+      callback null, _.values(params)
+
 
   getPrivacyModes: =>
 

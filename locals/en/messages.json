@@ -31,5 +31,8 @@
     "LOCALE_SETTED": "Okay, now I can speak English .. with Google Translate!",
     "MUTE": "silent ...",
     "UNMUTE": "Yuhu! We continue the conversation!",
-    "UNLINKED": "Okay. Delete all the settings of Twitter ..."
+    "UNLINKED": "Okay. Delete all the settings of Twitter ...",
+    "STATUS": "*Current settings status:*\nMuted: *$1*\nPhoto twitting: *$2*\nText twitting: *$3*\nTag required: *$4*\nCurrent tag: *$5*\nLinked with twitter: $6",
+    "TRUE": "Yes",
+    "FALSE": "No"
 }

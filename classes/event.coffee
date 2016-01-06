@@ -62,8 +62,11 @@ class Event
 
   getLocaleMessage: (message, params...)=>
 
-    @localizer.getMessage(message).replace /\$([0-9])/, ->
+    params = _.flatten params
+
+    @localizer.getMessage(message).replace /\$([0-9])/g, ->
       params.shift()
+
 
   sendErrorMessage: (message, callback)=>
 
