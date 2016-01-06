@@ -277,7 +277,7 @@ class Chat
 
   downloadFile: (fileId, callback)=>
 
-    @logger.info "Start download file"
+    @logger.info "Start download file `#{fileId}`"
 
     @bot.downloadFile(fileId, @retranslatorConfig.tmpFileDir)
     .then(
@@ -333,7 +333,7 @@ class Chat
 
     async.waterfall(
       [
-        @downloadFile
+        async.apply @downloadFile, fileId
         @getFileContentAndRemoveThem
         @uploadFileContentToTwitter
         @twitMedia
