@@ -52,8 +52,6 @@ class TwitterApi
 
   sendText: (text, callback)=>
 
-    text += " by @tg_speaker"
-
     @client.statuses "update", {status: text}, @accessToken, @accessTokenSecret, (err, data, res)=>
 
       if err
@@ -74,7 +72,7 @@ class TwitterApi
     data = {media_ids: mediaId}
 
     if status
-      data.status = status + " by @tg_speaker"
+      data.status = status
 
     @client.statuses "update", data, @accessToken, @accessTokenSecret, (err, data, res)=>
 
