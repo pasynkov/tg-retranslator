@@ -327,7 +327,7 @@ class Chat
       @logger.warn reasonForSkip
       callback()
     else
-      @downloadAndTwitMedia @message.getProcessingFileId(), callback
+      @downloadAndTwitMedia @currentMessage.getProcessingFileId(), callback
 
   downloadAndTwitMedia: (fileId, callback)=>
 
