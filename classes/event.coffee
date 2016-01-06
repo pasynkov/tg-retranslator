@@ -50,10 +50,15 @@ class Event
 
     @sendErrorMessage "TYPE_NOT_SUPPORTED", callback
 
-
   sendMessage: ([text, options]..., callback)=>
 
     @chat.sendMessage text, options, callback
+
+  updateLocalizer: (callback)=>
+
+    @localizer = new Localizer @chat.getLocale()
+
+    callback()
 
   getLocaleMessage: (message, params...)=>
 

@@ -7,3 +7,13 @@ settings - Open settings menu
 status - Get current settings status
 locale - Choose bot's language
 help - Help menu
+
+
+TwitterRadioBot send message from telegram to twitter! Bot has privacy, languages and other settings. Author: @pasynkov
+
+TwitterRadioBot send message from telegram to twitter! Bot has privacy, languages and other settings.
+Send /link for linking chat with twitter account.
+Send /start for start twitting.
+Choose /help for another actions.
+Thank you for use it! @pasynkov
+

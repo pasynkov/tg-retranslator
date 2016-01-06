@@ -112,6 +112,7 @@ class Command extends Event
       async.waterfall(
         [
           async.apply @chat.setLocale, locale
+          @updateLocalizer
           async.apply async.asyncify(@getLocaleMessage), "LOCALE_SETTED"
           @sendMessage
         ]
