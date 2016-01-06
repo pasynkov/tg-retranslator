@@ -13,14 +13,5 @@ class PhotoEvent extends Event
 
     @chat.downloadAndTwitMediaIfAllow callback
 
-    async.waterfall(
-      [
-        async.asyncify @message.getProcessingFileId
-        @chat.downloadAndTwitMediaIfAllow
-      ]
-      callback
-    )
-
-
 
 module.exports = PhotoEvent
