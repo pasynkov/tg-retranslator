@@ -48,6 +48,8 @@ class Event
 
     @logger.warn "Type `#{@chat.getCurrentMessageType()}` not supported"
 
+    return callback()
+
     @sendErrorMessage "TYPE_NOT_SUPPORTED", callback
 
   sendMessage: ([text, options]..., callback)=>
